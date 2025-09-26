@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smart GnuCash Design System - Modern Financial App Theme */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors */
+    --background: 0 0% 98%;
+    --foreground: 215 20% 15%;
+    --surface: 0 0% 100%;
+    --surface-secondary: 210 40% 97%;
+
+    /* Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 20% 15%;
+    --card-shadow: 215 25% 27% / 0.08;
+
+    /* Financial App Primary - Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    --primary-light: 217 91% 95%;
+
+    /* Success & Error - Financial Context */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 95%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 95%;
+
+    /* Warning for Budget Alerts */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+
+    /* Neutral Tones */
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 16% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Interactive Elements */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 217 91% 60%;
+
+    /* Sidebar - Financial Dashboard Style */
+    --sidebar-background: 215 28% 17%;
+    --sidebar-foreground: 215 20% 85%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 28% 22%;
+    --sidebar-accent-foreground: 215 20% 90%;
+    --sidebar-border: 215 28% 25%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 30%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(215 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(var(--card-shadow)), 0 2px 4px -1px hsl(var(--card-shadow));
+    --shadow-elevated: 0 10px 15px -3px hsl(var(--card-shadow)), 0 4px 6px -2px hsl(var(--card-shadow));
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Theme - Modern Financial Dashboard */
+    --background: 215 28% 8%;
+    --foreground: 215 20% 90%;
+    --surface: 215 28% 12%;
+    --surface-secondary: 215 28% 15%;
+
+    --card: 215 28% 12%;
+    --card-foreground: 215 20% 90%;
+    --card-shadow: 215 50% 3% / 0.5;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 215 28% 8%;
+    --primary-hover: 217 91% 70%;
+    --primary-light: 217 91% 15%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 215 28% 8%;
+    --success-light: 142 76% 12%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 215 28% 8%;
+    --destructive-light: 0 84% 12%;
+
+    --warning: 38 92% 60%;
+    --warning-foreground: 215 28% 8%;
+    --warning-light: 38 92% 12%;
+
+    --secondary: 215 20% 70%;
+    --secondary-foreground: 215 28% 8%;
+    --muted: 215 28% 18%;
+    --muted-foreground: 215 20% 60%;
+
+    --accent: 217 91% 65%;
+    --accent-foreground: 215 28% 8%;
+    --border: 215 28% 22%;
+    --input: 215 28% 22%;
+    --ring: 217 91% 65%;
+
+    --sidebar-background: 215 28% 5%;
+    --sidebar-foreground: 215 20% 85%;
+    --sidebar-primary: 217 91% 65%;
+    --sidebar-primary-foreground: 215 28% 5%;
+    --sidebar-accent: 215 28% 12%;
+    --sidebar-accent-foreground: 215 20% 90%;
+    --sidebar-border: 215 28% 18%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%) 0%, hsl(217 91% 50%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 45%) 0%, hsl(142 76% 35%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(215 28% 12%) 0%, hsl(215 28% 8%) 100%);
+
+    --shadow-card: 0 4px 6px -1px hsl(var(--card-shadow)), 0 2px 4px -1px hsl(var(--card-shadow));
+    --shadow-elevated: 0 10px 15px -3px hsl(var(--card-shadow)), 0 4px 6px -2px hsl(var(--card-shadow));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
